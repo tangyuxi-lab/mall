@@ -30,13 +30,13 @@
   </delete>
   <insert id="insert" parameterType="com.yuxitang.mall.pojo.OrderItem">
     insert into mall_order_item (id, user_id, order_no,
-      product_id, product_name, product_image,
-      current_unit_price, quantity, total_price,
-      create_time, update_time)
+                                 product_id, product_name, product_image,
+                                 current_unit_price, quantity, total_price,
+                                 create_time, update_time)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderNo,jdbcType=BIGINT},
-      #{productId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{productImage,jdbcType=VARCHAR},
-      #{currentUnitPrice,jdbcType=DECIMAL}, #{quantity,jdbcType=INTEGER}, #{totalPrice,jdbcType=DECIMAL},
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+            #{productId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{productImage,jdbcType=VARCHAR},
+            #{currentUnitPrice,jdbcType=DECIMAL}, #{quantity,jdbcType=INTEGER}, #{totalPrice,jdbcType=DECIMAL},
+            #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yuxitang.mall.pojo.OrderItem">
     insert into mall_order_item
@@ -150,15 +150,46 @@
   <update id="updateByPrimaryKey" parameterType="com.yuxitang.mall.pojo.OrderItem">
     update mall_order_item
     set user_id = #{userId,jdbcType=INTEGER},
-      order_no = #{orderNo,jdbcType=BIGINT},
-      product_id = #{productId,jdbcType=INTEGER},
-      product_name = #{productName,jdbcType=VARCHAR},
-      product_image = #{productImage,jdbcType=VARCHAR},
-      current_unit_price = #{currentUnitPrice,jdbcType=DECIMAL},
-      quantity = #{quantity,jdbcType=INTEGER},
-      total_price = #{totalPrice,jdbcType=DECIMAL},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+        order_no = #{orderNo,jdbcType=BIGINT},
+        product_id = #{productId,jdbcType=INTEGER},
+        product_name = #{productName,jdbcType=VARCHAR},
+        product_image = #{productImage,jdbcType=VARCHAR},
+        current_unit_price = #{currentUnitPrice,jdbcType=DECIMAL},
+        quantity = #{quantity,jdbcType=INTEGER},
+        total_price = #{totalPrice,jdbcType=DECIMAL},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="batchInsert" parameterType="list">
+    insert into mall_order_item (user_id, order_no,
+    product_id, product_name, product_image,
+    current_unit_price, quantity, total_price)
+    values
+    <foreach collection="orderItemList" index="index" item="item" separator=",">
+      (
+      #{item.userId},
+      #{item.orderNo},
+      #{item.productId},
+      #{item.productName},
+      #{item.productImage},
+      #{item.currentUnitPrice},
+      #{item.quantity},
+      #{item.totalPrice}
+      )
+    </foreach>
+  </insert>
+  <select id="selectByOrderNoSet" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from mall_order_item
+    <where>
+      <if test="orderNoSet.size() > 0">
+        order_no in
+        <foreach collection="orderNoSet" item="item" index="index" open="(" separator="," close=")">
+          #{item}
+        </foreach>
+      </if>
+    </where>
+  </select>
 </mapper>

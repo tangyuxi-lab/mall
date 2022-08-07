@@ -1,4 +1,4 @@
-package com.yuxitang.mall.controller;
+package com.yux .mall.controller;
 
 import com.yuxitang.mall.consts.MallConst;
 import com.yuxitang.mall.form.CartAddForm;

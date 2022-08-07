@@ -2,8 +2,11 @@ package com.yuxitang.mall.service;
 
 import com.yuxitang.mall.form.CartAddForm;
 import com.yuxitang.mall.form.CartUpdateForm;
+import com.yuxitang.mall.pojo.Cart;
 import com.yuxitang.mall.vo.CartVo;
 import com.yuxitang.mall.vo.ResponseVo;
+
+import java.util.List;
 
 /**
  * Created by 廖师兄
@@ -23,4 +26,6 @@ public interface ICartService {
     ResponseVo<CartVo> unSelectAll(Integer uid);
 
     ResponseVo<Integer> sum(Integer uid);
+
+    List<Cart> listForCart(Integer uid);
 }
