@@ -17,8 +17,6 @@ public class MallApplicationTests {
     CategoryMapper categoryMapper;
     @Test
     public void contextLoads() {
-        Category byId = categoryMapper.findById(100001);
-        System.out.println(byId.toString());
     }
 
 }
