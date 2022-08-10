@@ -7,8 +7,7 @@ This is a Single Page Appliaction with client-side rendering. It includes [mall]
 This is a Single Page Appliaction with client-side rendering. It includes [mall](https://github.com/tangyuxi-lab/mall) and [pay](https://github.com/tangyuxi-lab/pay) two seperate backend client project.
 
 > 
-#### Live Demo: [https://springboot-angular-shop.herokuapp.com/](https://springboot-angular-shop.herokuapp.com/)
-For Heroku application repo cloning, please check [Angular7-SpringBoot-hybrid-project](https://github.com/zhulinn/Angular7-SpringBoot-hybrid-project).
+#### Live Demo: [http://47.254.20.240/#/index](http://47.254.20.240/#/index)
 
 ## Screenshot
 ![](https://raw.githubusercontent.com/zhulinn/blog/hexo/source/uploads/post_pics/spring-angular/cart.png)
