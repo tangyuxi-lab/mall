@@ -23,7 +23,7 @@ This is a Single Page Appliaction with client-side rendering. It includes [mall]
 - Message Queue
 ## Technology Stacks
 **Backend**
-  - Java 11
+  - Java 8
   - Spring Boot 2.1
   - Spring Security
   - MySQL
