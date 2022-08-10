@@ -1,8 +1,5 @@
 # Online Shop Application
 
-#### A full-stack Online Shop web application using Springboot and Vue. 
-This is a Single Page Appliaction with client-side rendering. It includes [mall](# Online Shop Application
-
 #### A full-stack Online Shop web application using Spring Boot 2 and Vue. 
 This is a Single Page Appliaction with client-side rendering. It includes [mall](https://github.com/tangyuxi-lab/mall) and [pay](https://github.com/tangyuxi-lab/pay) two seperate backend client project.
 > The frontend of  project is based on the famous website in China.[xiaomi mall](https://www.mi.com/shop), which use the Vue as the fonntend frame. 
