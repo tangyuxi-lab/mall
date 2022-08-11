@@ -30,6 +30,7 @@ This is a Single Page Appliaction with client-side rendering. It includes [mall]
   - Mybatis
   - Gson
   - Maven
+  - IBM MQ
 
 ## Database Schema
 
